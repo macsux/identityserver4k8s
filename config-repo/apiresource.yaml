@@ -1,0 +1,10 @@
+
+apiVersion: identityserver.io/v1
+kind: ApiResource
+metadata:
+  name: api1.read
+spec:
+  name: api1
+  displayName: My Api
+  scopes:
+    - name: api1.read

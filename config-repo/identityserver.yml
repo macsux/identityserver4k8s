@@ -1,0 +1,38 @@
+security:
+  clients:
+    - clientId: "gui"
+      allowedGrantTypes:
+        - client_credentials
+        - password
+        - delegation
+        - token-exchange
+        - authorization_code
+        - implicit
+      redirectUris:
+        - https://localhost:5011/signin-oidc
+      allowedScopes:
+        - "api1.read"
+      clientSecrets:
+        - value: "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols="
+    - clientId: "api1client"
+      allowedGrantTypes:
+        - client_credentials
+        - delegation
+        - token-exchange
+      allowedScopes:
+        - api2.read
+      clientSecrets:
+        - value: "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols="
+  apiResources:
+    - name: "api1"
+      displayName: "my Api"
+      scopes:
+        - name: api1.read
+    - name: "api2"
+      displayName: "another api"
+      scopes:
+        - name: api2.read
+  users:
+    - subjectId: alice@pivotal.io
+      username: "alice"
+      password: "password"

@@ -1,0 +1,20 @@
+
+apiVersion: identityserver.io/v1
+kind: Client
+metadata:
+  name: backend
+spec:
+    clientId: backend
+    allowedGrantTypes:
+    - client_credentials
+    #- password
+    #- delegation
+    #- token-exchange
+    #- authorization_code
+    #- implicit
+    redirectUris:
+    - https://localhost:5011/signin-oidc
+    allowedScopes:
+    - "api1.read"
+    clientSecrets:
+    - value: password
